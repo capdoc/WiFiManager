@@ -993,6 +993,8 @@ void WiFiManager::handleWifi(boolean scan) {
   page += FPSTR(HTTP_FORM_END);
   page += FPSTR(HTTP_SCAN_LINK);
   reportStatus(page);
+  page += FPSTR(CD_CUSTOM_WIFI_STYLE);
+  page += FPSTR(CD_CUSTOM_WIFI_SCRIPT);
   page += FPSTR(HTTP_END);
 
   server->sendHeader(FPSTR(HTTP_HEAD_CL), String(page.length()));
