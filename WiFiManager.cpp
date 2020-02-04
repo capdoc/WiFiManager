@@ -1370,6 +1370,11 @@ void WiFiManager::handleWifiSave() {
     String page = getHTTPHead(FPSTR(S_titlewifisaved)); // @token titlewifisaved
     page += FPSTR(HTTP_SAVED);
   }
+
+  // Start custom CAPDOC
+  page += FPSTR(CD_HTTP_CONNECTING);
+  // End custom CAPDOC
+
   page += FPSTR(HTTP_END);
 
   server->sendHeader(FPSTR(HTTP_HEAD_CL), String(page.length()));
