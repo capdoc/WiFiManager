@@ -17,7 +17,7 @@ const char CD_HTTP_CONNECTING[]             PROGMEM =
   "  </style>"
   "  <script>"
   "    setTimeout(() => {"
-  "      window.location.href = '/';"
+  "      window.location.href = location.origin + '/';"
   "    }, 30000);"
   "  </script>"
   "</div>";
