@@ -16,9 +16,7 @@ const char CD_HTTP_CONNECTING[]             PROGMEM =
   "    .loader { width: 50px; height: 50px; margin: 0 auto; display: block; font-family: verdana, helvetical, arial, sans-serif; }"
   "  </style>"
   "  <script>"
-  "    setTimeout(() => {"
-  "      window.location.href = location.origin + '/';"
-  "    }, 30000);"
+  "    document.title='Connecting device to wifi',setTimeout(()=>{window.location.href=location.origin,'/'!==window.location.pathname&&(window.location=location.origin)},1e4);"
   "  </script>"
   "</div>";
 
