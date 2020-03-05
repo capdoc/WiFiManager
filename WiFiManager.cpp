@@ -968,8 +968,9 @@ void WiFiManager::handleWifi(boolean scan) {
     page += getScanItemOut();
   }
   String pitem = "";
+  pitem = FPSTR(CD_CUSTOM_WIFI_SCRIPT);
 
-  pitem = FPSTR(HTTP_FORM_START);
+  pitem += FPSTR(HTTP_FORM_START);
   pitem.replace(FPSTR(T_v), F("wifisave")); // set form action
   page += pitem;
 
@@ -994,7 +995,6 @@ void WiFiManager::handleWifi(boolean scan) {
   page += FPSTR(HTTP_SCAN_LINK);
   reportStatus(page);
   page += FPSTR(CD_CUSTOM_WIFI_STYLE);
-  page += FPSTR(CD_CUSTOM_WIFI_SCRIPT);
   page += FPSTR(HTTP_END);
 
   server->sendHeader(FPSTR(HTTP_HEAD_CL), String(page.length()));
