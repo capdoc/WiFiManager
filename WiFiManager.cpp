@@ -375,18 +375,18 @@ bool WiFiManager::startAP(){
   // default channel is 1 here and in esplib, @todo just change to default remove conditionals
   if (_apPassword != "") {
     if(channel>0){
-      ret = WiFi.softAP(_apName.c_str(), _apPassword.c_str(),channel,_apHidden);
+      ret = WiFi.softAP(_apName.c_str(), _apPassword.c_str(),channel,_apHidden, 1);//1 here means max_connection=1
     }  
     else{
-      ret = WiFi.softAP(_apName.c_str(), _apPassword.c_str(),1,_apHidden);//password option
+      ret = WiFi.softAP(_apName.c_str(), _apPassword.c_str(),1,_apHidden, 1);//password option//1 here means max_connection=1
     }
   } else {
     DEBUG_WM(DEBUG_VERBOSE,F("AP has anonymous access!"));    
     if(channel>0){
-      ret = WiFi.softAP(_apName.c_str(),"",channel,_apHidden);
+      ret = WiFi.softAP(_apName.c_str(),"",channel,_apHidden, 1);//1 here means max_connection=1
     }  
     else{
-      ret = WiFi.softAP(_apName.c_str(),"",1,_apHidden);
+      ret = WiFi.softAP(_apName.c_str(),"",1,_apHidden, 1);//1 here means max_connection=1
     }  
   }
 
